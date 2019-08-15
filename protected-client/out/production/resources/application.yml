@@ -1,4 +1,0 @@
-trustStoreResource: truststore.jks
-trustStorePassword: password
-keyStoreResource: keystore.jks
-keyStorePassword: password

@@ -1,2 +1,0 @@
-include 'protected-client'
-include 'protected-server'
