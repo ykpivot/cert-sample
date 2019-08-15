@@ -1,6 +1,7 @@
 package demo;
 
 import java.io.IOException;
+import java.net.URL;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
 import java.security.cert.CertificateException;
@@ -22,6 +23,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
@@ -91,7 +93,7 @@ public class DemoApplication implements CommandLineRunner {
 			}
 		};
 
-		SSLContextBuilder sslcontextBuilder = SSLContexts.custom().useProtocol("TLS")
+		SSLContextBuilder sslcontextBuilder = SSLContexts.custom()
 				.loadTrustMaterial(trustStore, allTrust);
 		// END INSECURE
 
@@ -100,12 +102,15 @@ public class DemoApplication implements CommandLineRunner {
 		// service imported into it.
 
 		// MORE SECURE
-//		SSLContextBuilder sslcontextBuilder = SSLContexts.custom().useProtocol("TLS")
-//				.loadTrustMaterial(trustStoreResource.getURL(), trustStorePassword.toCharArray());
+        //		SSLContextBuilder sslcontextBuilder = SSLContexts.custom().useProtocol("TLS")
+        //				.loadTrustMaterial(trustStoreResource.getURL(), trustStorePassword.toCharArray());
 		// END MORE SECURE
-		
+
+		ClassPathResource keystoreResource = new ClassPathResource("keystore.jks");
+		URL keystoreUrl = keystoreResource.getURL();
+
 		SSLContext sslcontext = sslcontextBuilder
-				.loadKeyMaterial(keyStoreResource.getURL(), keyStorePassword.toCharArray(), keyStorePassword.toCharArray())
+				.loadKeyMaterial(keystoreUrl, keyStorePassword.toCharArray(), keyStorePassword.toCharArray())
 				.build();
 		SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(
 				sslcontext,

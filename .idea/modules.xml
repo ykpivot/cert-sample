@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/protected-client/protected-client.iml" filepath="$PROJECT_DIR$/.idea/modules/protected-client/protected-client.iml" group="protected-client" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/protected-client/protected-client_main.iml" filepath="$PROJECT_DIR$/.idea/modules/protected-client/protected-client_main.iml" group="protected-client" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/protected-client/protected-client_test.iml" filepath="$PROJECT_DIR$/.idea/modules/protected-client/protected-client_test.iml" group="protected-client" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/protected-server/protected-server.iml" filepath="$PROJECT_DIR$/.idea/modules/protected-server/protected-server.iml" group="protected-server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/protected-server/protected-server_main.iml" filepath="$PROJECT_DIR$/.idea/modules/protected-server/protected-server_main.iml" group="protected-server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/protected-server/protected-server_test.iml" filepath="$PROJECT_DIR$/.idea/modules/protected-server/protected-server_test.iml" group="protected-server" />
+      <module fileurl="file://$PROJECT_DIR$/x509-cert-example.iml" filepath="$PROJECT_DIR$/x509-cert-example.iml" />
+    </modules>
+  </component>
+</project>
